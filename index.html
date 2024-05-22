@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<link type="text/css" rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"
+		type="text/javascript"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+
+
+	<script>
+		var $buoop = {
+			required: { e: -6, f: -6, o: -6, s: -6, c: -6 },
+			api: 2020.03,
+			onshow: function (infos) { document.location = "notsupported.html"; }
+		};
+		function $buo_f() {
+			var e = document.createElement("script");
+			e.src = "//browser-update.org/update.min.js";
+			document.body.appendChild(e);
+		};
+		try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
+		catch (e) { window.attachEvent("onload", $buo_f) }
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Preload Videos -->
+	<video preload style="display: none;"><source src="video/ControlRoom/AdobeStock_284787378.mp4" type="video/mp4"></video>
+	<video preload style="display: none;"><source src="video/DataCitizens/AdobeStock_263959700.mp4" type="video/mp4"></video>
+	<video preload style="display: none;"><source src="video/HeadOffice/AdobeStock_355981167.mp4" type="video/mp4"></video>
+	<video preload style="display: none;"><source src="video/Stockpiles/AdobeStock_214519544.mp4" type="video/mp4"></video>
+	<video preload style="display: none;"><source src="video/UndergroundDrone/AdobeStock_281480075.mp4" type="video/mp4"></video>
+	<video preload style="display: none;"><source src="video/UndergroundNetwork/AdobeStock_363774377.mp4" type="video/mp4"></video>
+	<video preload style="display: none;"><source src="video/UndergroundDrill/UndergroundDrill.mp4" type="video/mp4"></video>
+	<video preload style="display: none;"><source src="video/BelowSurface/BelowSurface.mp4" type="video/mp4"></video>
+
+	<video preload style="display: none;"><source src="video/ControlRoom/AdobeStock_284787378.webm" type="video/webm"></video>
+	<video preload style="display: none;"><source src="video/DataCitizens/AdobeStock_263959700.webm" type="video/webm"></video>
+	<video preload style="display: none;"><source src="video/HeadOffice/AdobeStock_355981167.webm" type="video/webm"></video>
+	<video preload style="display: none;"><source src="video/Stockpiles/AdobeStock_214519544.webm" type="video/webm"></video>
+	<video preload style="display: none;"><source src="video/UndergroundDrone/AdobeStock_281480075.webm" type="video/webm"></video>
+	<video preload style="display: none;"><source src="video/UndergroundNetwork/AdobeStock_363774377.webm" type="video/webm"></video>
+	<video preload style="display: none;"><source src="video/UndergroundDrill/UndergroundDrill.webm" type="video/webm"></video>
+	<video preload style="display: none;"><source src="video/BelowSurface/BelowSurface.webm" type="video/webm"></video>
+	<!--  -->
+
+	<div id="loader-wrapper">
+		<div class="loadinglogo"><img src="./img/Moon_Logo.png" class="logo" /></div>
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+		<div class="loadingNotice">
+			<div class="noticeBody">To maximise your experience, we strongly recommend you use the Microsoft Edge &
+				Google Chrome (version 75+) browsers</div>
+		</div>
+	</div>
+
+	<div id="container" class="app">
+		<div id="parent" class="app-inner">
+
+			<img id='backgroundImg' src="img/site-background.jpg" style="width: 1123px; height: 768px;" />
+			<video style=" position: absolute; left: 0px;top:0px" autoplay loop muted>
+				<source src="animations/haul-trucks.webm" type="video/webm">
+				<source src="animations/haul-trucks.mov" type="video/mp4">
+			</video>
+
+			
+			<!--  OPERATION CENTER - LINE ANIMATION-->
+
+			<video id="videoHeadOffice" style="position: absolute; left: 0px;top:0px;" autoplay loop muted>
+				<source src="animations/headOffice.webm" type="video/webm">
+				<source src="animations/headOffice.mov" type="video/mp4">
+			</video>
+
+			<!-- BELOW SURFACE -->
+
+			<button type="button" id="btn-belowSurface" class="iconButton" style="left: 699px;top: 160px;"
+				onmouseover="belowSurfaceOver()"
+				onclick="openPopUp(this,'Short term grade control modeling','2020 Q4 \n2021 Q3 full implementation','Began short term grade control modeling Proof of Concept (POC) in Q4 2020. Short-term, high-resolution grade models will enable us to access on-demand ore body knowledge by using the latest available mining data. This will allow us to make faster, more accurate decisions on how we drill and blast, which will assist us in improving dilution control.','video/BelowSurface/BelowSurface.mp4')">
+				<video id="videoBelowSurface" class="btn-img" style="width: 100%;" autoplay loop muted>
+					<source src="animations/belowSurface.webm" type="video/webm">
+					<source src="animations/belowSurface.mov" type="video/mp4">
+				</video>
+			</button>
+
+			<!--  OPERATION CENTER -->
+
+			<button type="button" id="btn-headOffice" class="iconButton" style="left: 658px;top: 55px;"
+				onmouseover="headOfficeOver()" onmouseout="headOfficeOut()"
+				onclick="openPopUp(this,'Enterprise resource planning system update','2021 Q2','Our centralized Enterprise Resource Planning (ERP) system enables standardization across operations and allows for efficient system integration, improved control across departments, more functionality and improved security of our data in the Cloud. In addition, Microsoft Dynamics 365 will be easy to use for teams familiar with Microsoft applications, as users can customize the interface according to their needs.','video/HeadOffice/AdobeStock_355981167.mp4')">
+				<img src="img/btn-operationsCenter.svg" class="btn-img" />
+			</button>
+
+			<!-- DATA CITIZENS -->
+
+			<button type="button" id="btn-dataCitizens" class="iconButton" style="left: 157px;top: 4px;"
+				onmouseover="citizenOver()"
+				onclick="openPopUp(this,'Data citizen program','2020 Q4','Our data citizen program provides an opportunity to any employee to upgrade their skills and to understand the importance of data, how to analyze it using a variety of tools, and how to use it to make fact-based and informed decisions that will improve the business.','video/DataCitizens/AdobeStock_263959700.mp4')">
+				<video id="videoCitizens" class="btn-img" width="100%" autoplay loop muted>
+					<source src="animations/dataCitizen.webm" type="video/webm">
+					<source src="animations/dataCitizen.mov" type="video/mov">
+				</video>
+			</button>
+
+			<!-- CONTROL ROOM -->
+
+			<button type="button" id="btn-controlRoom" class="iconButton" style="left: 549px;top: 316px;"
+				onmouseover="controlRoomOver()"
+				onclick="openPopUp(this,'Integrated planning, scheduling & execution','2020 Q4','Our spatial data platform allows us to integrate both long-term and short-term planning and scheduling efforts by creating a master business schedule. This improves our ability to execute plans by enabling short interval control enabling us to track and analyze the extent to which teams comply with planned activities on a shift-by-shift basis, understand the reasons for deviation and then improve the way we produce in the short and long term. Better planning and execution practices will help increase the tons of ore produced and increase the quality of the feed material to the plant.','video/ControlRoom/AdobeStock_284787378.mp4')">
+				<video id="videoControlRoom" class="btn-img" width="100%" autoplay loop muted>
+					<source src="animations/ControlRoom.webm" type="video/webm">
+					<source src="animations/ControlRoom.mov" type="video/mp4">
+				</video>
+			</button>
+
+			<!-- DRONES -->
+
+			<button type="button" id="btn-drones" class="iconButton" style="left: 663px;top: 361px;"
+				onmouseover="droneOver()"
+				onclick="openPopUp(this,'Autonomous drone surveying','2020 Q4','Autonomous drone surveying will increase the scope, accuracy and frequency of surveying and enable faster turnaround times between surveying effort and information required to make important decisions. This will ultimately lead to effective dilution management and control through more accurate extraction strategies. The use of drones also reduces the risk to human safety that is associated with surveying.','video/UndergroundDrone/AdobeStock_281480075.mp4')">
+				<video id="videoDrone" class="btn-img" width="100%" autoplay loop muted>
+					<source src="animations/drone.webm" type="video/webm">
+					<source src="animations/drone.mov" type="video/mp4">
+				</video> </button>
+
+			<!-- UNDERGROUND NETWORK -->
+
+			<button type="button" id="btn-UNetwork" class="iconButton" style="left: 783px;top: 489px;"
+				onmouseover="uNetworkOver()"
+				onclick="openPopUp(this,'underground \nconnectivity','2021 Q2 - Rosh Pinah','The establishment of an underground communication network will be a key enabler of several initiatives requiring real-time, high-bandwidth and high-availability networks. It will be like having Wi-Fi and internet connectivity underground. The network will allow the efficient transfer of data between machines, humans and systems, which in turn enables operational improvements in both mine planning and execution functions.','video/UndergroundNetwork/AdobeStock_363774377.mp4')">
+				<video id="videoUNetwork" class="btn-img" width="100%" autoplay loop muted>
+					<source src="animations/UNetwork.webm" type="video/webm">
+					<source src="animations/UNetwork.mov" type="video/mp4">
+				</video> </button>
+
+				<!-- PRODUCTION DRILLING  -->
+
+			<button type="button" id="btn-UDrill" class="iconButton" style="left: 879px;top: 321px;"
+				onmouseover="uDrillOver()"
+				onclick="openPopUp(this,'drilling machine \ntelemetry','2021 Q3','The drilling telemetry project allows real-time access to drill machine data so operators can see drilling performance and progress as they work. In addition, the information is available to management through the underground network to verify if work is being delivered according to plan and that blast planning can be done using the accurate as drilled data. This will assist with improving dilution control.','video/UndergroundDrill/UndergroundDrill.mp4')">
+				<video id="videoUDrill" class="btn-img" width="100%" autoplay loop muted>
+					<source src="animations/productionDrilling.webm" type="video/webm">
+					<source src="animations/productionDrilling.mov" type="video/mp4">
+				</video>
+			</button>
+
+			<!-- STOCKPILE -->
+
+			<button type="button" class="iconButton" style="top: 377px; left: 154px;"
+				onclick="openPopUp(this,'Blending analytics','2021 Q1','Began blending analytics Proof of Concept (POC) in Q1 2021. The blending analytics project will help to provide a more stable mix of material to the processing plant. It will analyze available stockpile material data to inform decisions about how much material to draw from which stockpile in order to create the target plant feed blend. By providing a more stable mix of feed material, overall plant performance should improve.','video/Stockpiles/AdobeStock_214519544.mp4')">
+				<video id="btnStockpile" class="btn-img" width="100%" autoplay loop muted>
+					<source src="animations/btn-stockpile.webm" type="video/webm">
+					<source src="animations/btn-stockpile.mov" type="video/mp4">
+				</video>
+			</button>
+
+		</div>
+	</div>
+
+	<div id="openPopup" class="hover_background" onclick="closePopUp()">
+		<div class="popUp" id="popUp">
+			<a href="index.html#close" title="Close" class="close">X</a>
+			<div class='flexcontainer'>
+				<div class='vsplit'>
+					<div class='box' style='flex: 1; max-height: 50%;'>
+						<video preload="auto" id="popUpVideo" class="popUpVideo" autoplay loop muted></video>
+					</div>
+					<div class='hsplit' style='flex: 1' id="popUpContent">
+						<div class='box' style='flex: 1;'>
+							<h2 id="popUpTitle"></h2>
+							<table style="position: relative;">
+								<tr>
+									<td style="width: 70px;">
+										<div
+											style="font-family: AvenirLT65Medium;color: rgba(0, 203, 198, 1);text-align: left;">
+											Timing</div>
+									</td>
+									<td>
+										<p id="popUpSubtitle"></p>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class='box' style='flex: 1;flex-basis: 20em;'>
+							<p id="popUpText"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		window.addEventListener('load', (event) => {
+			console.log('page is fully loaded');
+			document.querySelector('body').classList.add("loaded")
+		});
+	</script>
+	<script src="src/scrollbooster.min.js"></script>
+	<script src="src/scripts.js"></script>
+
+</body>
+
+</html>

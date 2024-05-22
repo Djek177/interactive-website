@@ -1,0 +1,349 @@
+/* FONTS */
+@font-face {
+  font-family: AvenirLT65Medium;
+  src: url("./fonts/Avenir\ LT\ 65\ Medium.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: AvenirLT65Medium;
+  src: url("./fonts/Avenir\ LT\ 95\ Black.ttf");
+  font-weight: bold;
+}
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.iconButton {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: transparent !important;
+  border: none;
+  position: absolute;
+}
+
+.iconButton:hover .btn-img {
+  opacity: 1;
+}
+
+.btn-img {
+  mix-blend-mode: normal;
+  opacity: 0;
+  width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+#videoHeadOffice {
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+.app {
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  /* width: 100%;
+  height: 100%; */
+  max-width: 1123px;
+  max-height: 768px;
+}
+
+.app-inner {
+  position: relative;
+}
+
+/* Popup Box */
+
+.hover_background {
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1002;
+  display: none;
+  transition: all 1s linear;
+}
+
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+}
+
+.trigger_popup {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.popUp {
+  min-width: 35%;
+  max-width: 750px;
+  background-color: rgb(214, 214, 214);
+  padding: 10px;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+
+  position: relative;
+
+  border-radius: 5px;
+  border-color: rgb(102, 102, 102);
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.popUpVideo {
+  background: pink;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+}
+
+#popUpTitle {
+  font-size: 2em;
+  font-family: "AvenirLT65Medium", sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-align: left;
+  white-space: pre-wrap;
+  letter-spacing: 2px;
+  color: rgb(80, 80, 80);
+  line-height: 25px;
+}
+
+#popUpContent {
+  font-size: 1em;
+  font-family: "AvenirLT65Medium", sans-serif;
+  font-weight: normal;
+  margin: auto;
+  color: rgb(80, 80, 80);
+  overflow: auto;
+}
+
+#popUpSubtitle {
+  font-size: 1em;
+  font-family: "AvenirLT65Medium", sans-serif;
+  font-weight: normal;
+  text-align: left;
+  color: rgb(80, 80, 80);
+  margin: 2px;
+  white-space: nowrap;
+}
+
+.flexcontainer {
+  width: 100%;
+  max-height: 100%;
+  /*   left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center; */
+  position: relative;
+}
+.hsplit {
+  display: flex;
+  flex-direction: row;
+  max-height: 50%;
+}
+.vsplit {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.box {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #999999;
+  text-align: justify;
+  margin: 10px;
+}
+
+.close {
+  float: right;
+  margin: 5px;
+  text-decoration: none;
+  font-size: 2em;
+  font-family: "Roboto", sans-serif;
+}
+
+.close:link {
+  color: rgba(0, 203, 198, 1);
+} /* unvisited link */
+.close:visited {
+  color: rgba(0, 203, 198, 1);
+} /* visited link */
+.close:hover {
+  color: rgba(0, 203, 198, 1);
+} /* mouse over link */
+.close:active {
+  color: rgba(0, 203, 198, 1);
+} /* selected link */
+
+/* Loading Screen */
+.loadinglogo,
+.loadingNotice {
+  z-index: 1001;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.loadingNotice {
+  height: 90%;
+  color: #000;
+}
+
+.logo {
+  margin: 10px auto;
+  height: 80px;
+  width: 80px;
+  align-self: center;
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  background: #fff;
+  width: 51%;
+  height: 100%;
+  z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+.noticeBody {
+  align-self: flex-end;
+  margin: 0 auto;
+  font-style: italic;
+  text-align: center;
+  padding: 0px 10px 15px 10px;
+}
+
+/* Loaded Styles */
+.loaded #loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 5.3s;
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 5.3s;
+}
+
+.loaded #loader {
+  opacity: 0;
+  transition: all 0.3s ease-out 5.4s;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  opacity: 0;
+  /* transform: translateY(-100%); */
+  transition: all 0.3s ease-out 5.4s;
+  animation-iteration-count: infinite;
+}
+
+.loaded #loader-wrapper .loadingNotice {
+  visibility: hidden;
+  opacity: 0;
+  /* transform: translateY(100%); */
+  transition: all 0.3s ease-out 5s;
+  animation-iteration-count: infinite;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 3px solid transparent;
+  border-top-color: #53575a;
+  border-radius: 100%;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 3px solid transparent;
+  border-top-color: #00a499;
+  border-radius: 100%;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 3px solid transparent;
+  border-top-color: #c3d500;
+  border-radius: 100%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 1001;
+}
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
